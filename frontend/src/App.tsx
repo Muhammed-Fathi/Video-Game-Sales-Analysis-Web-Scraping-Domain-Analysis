@@ -640,7 +640,7 @@ function Footer() {
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="https://github.com"
+              href="https://github.com/Muhammed-Fathi/Video-Game-Sales-Analysis-Web-Scraping-Domain-Analysis.git"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-white transition-colors flex items-center gap-1"
