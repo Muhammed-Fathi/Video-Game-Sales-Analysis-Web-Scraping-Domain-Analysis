@@ -1,3 +1,7 @@
+# ============================================
+# Data Science Course Project — Requirements
+# ============================================
+
 # Core Data Science Libraries
 pandas>=1.5.0
 numpy>=1.23.0
@@ -26,6 +30,9 @@ ipykernel>=6.19.0
 # Data Processing
 openpyxl>=3.0.10
 scikit-learn>=1.2.0
+
+# Machine Learning
+xgboost>=1.7.0
 
 # Utilities
 tqdm>=4.64.0

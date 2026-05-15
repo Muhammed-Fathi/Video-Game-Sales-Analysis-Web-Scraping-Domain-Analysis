@@ -23,16 +23,16 @@ Both tasks include **Jupyter Notebooks** for detailed analysis and **Streamlit D
 ```
 data-science-project/
 │
-└── datascience/
 ├── task1_dataset_analysis_visualization.ipynb   # Task 1 Jupyter Notebook
 ├── task2_web_scraping_domain_analysis.ipynb     # Task 2 Jupyter Notebook
+├── task3_ML.ipynb                               # Task 3 ML Regression Notebook
 ├── task1_dashboard.py                           # Task 1 Streamlit Dashboard
-├── task2_dashboard.py                           # Task 2 Streamlit Dashboard
+├── task2_dashboard.py
+├── task3_dashboard.py                           # Task 2 Streamlit Dashboard
 ├── README.md                                    # Project Documentation
 ├── requirements.txt                             # Python Dependencies
 ├── .gitignore                                   # Git Ignore Rules
 │
-└── frontend/
 └── src/                                         # Project Documentation Website
     ├── App.tsx
     ├── main.tsx
@@ -155,6 +155,64 @@ data-science-project/
 
 ---
 
+## Task 3 — Machine Learning Regression
+
+### Problem Statement
+Predict the global sales of a video game based on its characteristics (platform, genre, publisher, year) using machine learning regression models.
+
+### Models Trained
+| # | Model | Type |
+|---|-------|------|
+| 1 | Linear Regression | Linear |
+| 2 | Decision Tree Regressor | Tree |
+| 3 | Random Forest Regressor | Ensemble |
+| 4 | Gradient Boosting Regressor | Boosting |
+| 5 | Extra Trees Regressor | Ensemble |
+| 6 | XGBoost Regressor | Boosting |
+
+### Features Used
+- **Platform_Encoded** — Which console the game is on
+- **Genre_Encoded** — What type of game it is
+- **Publisher_Encoded** — Who published the game
+- **Year** — When the game was released
+- **Is_Top_Publisher** — Binary flag (engineered)
+- **Platform_Age** — Years since platform launch (engineered)
+- **Genre_Frequency** — How common the genre is (engineered)
+- **Decade** — Decade of release (engineered)
+
+### Evaluation Metrics
+- MAE (Mean Absolute Error)
+- MSE (Mean Squared Error)
+- RMSE (Root Mean Squared Error)
+- R² Score (Coefficient of Determination)
+- 5-Fold Cross-Validation
+
+### Hyperparameter Tuning
+- Applied RandomizedSearchCV on Gradient Boosting
+- 50 parameter combinations with 5-fold CV
+- Optimized for R² score
+
+### Key Insights
+- Ensemble models (Random Forest, Gradient Boosting) significantly outperform Linear Regression
+- Publisher and Genre are the strongest predictors of game sales
+- The models predict average-selling games well but struggle with blockbuster outliers
+- Feature engineering improved model performance marginally
+
+### Notebook Sections
+1. Project Title & Introduction
+2. Import Libraries
+3. Load Dataset
+4. Data Cleaning & Preprocessing
+5. Exploratory Data Analysis (8+ visualizations)
+6. Feature Engineering (5 new features)
+7. Machine Learning — 6 Regression Models
+8. Model Evaluation (metrics, comparison table, plots)
+9. Hyperparameter Tuning (RandomizedSearchCV)
+10. Final Insights & Conclusion
+11. Interactive Dashboard Section (Plotly)
+
+---
+
 ## Libraries Used
 
 ### Data Science & Analysis
@@ -173,6 +231,10 @@ data-science-project/
 - `beautifulsoup4` — HTML parsing
 - `lxml` — XML/HTML processing
 - `selenium` — Browser automation (if needed)
+
+### Machine Learning
+- `scikit-learn` — Model training, evaluation, and preprocessing
+- `xgboost` — Extreme Gradient Boosting regressor
 
 ### Dashboard
 - `streamlit` — Interactive web dashboards
@@ -239,6 +301,7 @@ jupyter notebook
 # Then open:
 # - task1_dataset_analysis_visualization.ipynb
 # - task2_web_scraping_domain_analysis.ipynb
+# - task3_ML.ipynb
 ```
 
 Or use VS Code's Jupyter extension:
@@ -289,3 +352,6 @@ The dashboard will open in your default web browser at `http://localhost:8501`
 
 ---
 
+## License
+
+This project is for educational purposes only.
